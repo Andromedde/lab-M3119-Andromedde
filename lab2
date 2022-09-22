@@ -1,0 +1,17 @@
+#include "Proga_lab2.h"
+#include <stdio.h>
+#include <math.h>
+
+int lab2(){
+    float z1, z2, n, m;
+    scanf("%d", &n);
+    scanf("%d", &m);
+
+    z1 = ((m-1) * sqrtf(m) - (n - 1) * sqrtf(n)) / (sqrtf(pow(m,3) * n) + m * n + pow(m,2) - m);
+    z2 = (sqrtf(m) - sqrtf(n)) / m;
+
+    printf("z1:%f\n", z1);
+    printf("z2:%f\n", z2);
+
+    return 0;
+}
