@@ -1,0 +1,28 @@
+//
+// Created by FerHard_GW on 28.10.2022.
+//
+#include <stdio.h>
+#include "Proga_lab6.h"
+#include <stdlib.h>
+int lab6() {
+    int *arr[4];
+    arr[0]=0;
+    arr[1]=3;
+    arr[2]=5;
+    arr[3]=7;
+    printf("%d %d\n%d %d\n------------\n",*(arr),*(arr+1),*(arr+2),*(arr+3));
+
+    int i;
+    int *m;
+
+    m = (int *) malloc(4 * sizeof(int));
+    for (i = 0; i < 4; i++) {
+        printf("Vvedite element [%d]:", i);
+        scanf_s("%d", m + i);
+    }
+    printf("\nMassiv: \n", i);
+    printf("%d %d\n%d %d",*(m),*(m+1),*(m+2),*(m+3));
+    free(m);
+
+    return 0;
+}
