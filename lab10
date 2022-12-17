@@ -1,0 +1,45 @@
+//
+// Created by FerHard_GW on 09.12.2022.
+//
+
+#include "Proga_lab10.h"
+#include <stdio.h>
+#include <math.h>
+#include <malloc.h>
+#include <string.h>
+int NODandNOK(int a,int b)
+{
+    while(a!=b)
+        if(a>b)
+            a-=b;
+        else
+            b-=a;
+    return a;
+}
+
+int sum(int n)
+{
+    if (n % 10 == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return sum(n / 10) + (n % 10);
+    }
+}
+
+int lab10(){
+    int N,M;
+    printf("Enter N= ");
+    scanf("%d",&N);
+    printf("Enter M= ");
+    scanf("%d",&M);
+    printf("NOD = %d\n",NODandNOK(N,M));
+    printf("NOK = %d\n", N*M/NODandNOK(N,M));
+    int el;
+    printf("Enter your number: ");
+    scanf("%d",&el);
+    printf("%d\n" , sum(el));
+    return 0;
+}
