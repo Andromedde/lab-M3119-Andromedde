@@ -1,0 +1,87 @@
+//
+// Created by FerHard_GW on 12.11.2022.
+//
+
+#include "Proga_lab7.h"
+#include <stdio.h>
+#include <math.h>
+union {
+    struct {
+        char SD : 1;
+        char Compact_Flash : 1;
+        char  MemoyStick : 1;
+    };
+    int bit;
+} condition;
+enum Colour{
+    akvarel,maslan,guash,vodnaya
+};
+float area(double a,double b,double c,double p){
+    double s = sqrt(p*(p-a)*(p-b)*(p-c));
+    return s;
+}
+
+int lab7(){
+    int n;
+    printf("Vibirete vid kraski:\n1)Akvarel\n2)Maslanaya\n3)Guash\n4)Vodnaya\n");
+    scanf("%d",&n);
+    switch (n) {
+        case 1:
+            printf("Vi vibrali Akvarelivuyu krasku\n");
+            break;
+        case 2:
+            printf("Vi vibrali Maslanuyu krasku\n");
+            break;
+        case 3:
+            printf("Vi vibrali Guash\n");
+            break;
+        case 4:
+            printf("Vi vibrali Vodanuyu krasku\n");
+            break;
+        default:
+            printf("Takoi kraski netu\n");
+            break;
+
+    }
+    printf("-----------------------------------\n");
+    int x1,x2,x0,y1,y2,y0;
+
+    printf("Vvedite x0 y0: ");
+    scanf("%d %d",&x0,&y0);
+    printf("Vvedite x1 y1: ");
+    scanf("%d %d",&x1,&y1);
+    printf("Vvedite x2 y2: ");
+    scanf("%d %d",&x2,&y2);
+    double a = sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+    double b = sqrt((x2-x0)*(x2-x0) + (y2-y0)*(y2-y0));
+    double c = sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    double p = (a+b+c)/2;
+    printf("s= %.2f\n", area(a,b,c,p));
+
+    printf("Perimetr = %.2f\n ",p);
+//    printf("Plohaf = %.2f\n",s);
+
+    printf("-----------------------------------\n");
+
+    printf("Vvedite bit: ");
+    scanf("%x", &condition.bit);
+
+    if (condition.SD)
+        printf("SD is on\n");
+    else
+        printf("SD is off\n");
+
+
+    if (condition.Compact_Flash)
+        printf("Compact_Flash is on\n");
+    else
+        printf("Compact_Flash is off\n");
+
+
+    if (condition.MemoyStick)
+        printf("MemoyStick is on\n");
+    else
+        printf("MemoyStick is off\n");
+
+    return 0;
+}
