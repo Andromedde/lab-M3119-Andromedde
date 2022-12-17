@@ -1,0 +1,31 @@
+
+#include "Proga_lab4.h"
+#include <stdio.h>
+
+
+long def(int l, int r, int num){
+    long a =  (r - num) & 2147483648;
+    long b = (num - l) & 2147483648;
+    return a+b;
+}
+void prog4(){
+
+    int num,l=33,r=88;
+    printf("Input num: ");
+    scanf("%d",&num);
+    printf("%ld\n", def(l,r,num));
+
+
+
+    int num2;
+    printf("Input a num: ");
+
+    scanf("%d",&
+    num2);
+    if (num2 &(1 << 20)){
+        printf(" 1 \n");
+    }else{
+        printf("0 \n");
+    }
+
+}
