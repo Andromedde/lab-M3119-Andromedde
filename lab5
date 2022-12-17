@@ -1,0 +1,20 @@
+//
+// Created by FerHard_GW on 28.10.2022.
+//
+
+#include "Proga_lab5.h"
+#include <stdio.h>
+int lab5(){
+    int arr[] = {0,3,5,7,11,13};
+    printf("%d  %d  %d\n%d %d %d\n\n",arr[0],arr[1],arr[2],arr[3],arr[4],arr[5]);
+    printf("%d  %d \n%d  %d \n%d %d\n",arr[0],arr[1],arr[2],arr[3],arr[4],arr[5]);
+    printf("-------------\n");
+    int matr1[] = {1,1,1,4};
+    int matr2[] = {1,2,4,1};
+    int a11 = matr1[0]*matr2[0]+matr1[1]*matr2[3];
+    int a12 = matr1[0]*matr2[1]+matr1[1]*matr2[4];
+    int a21 = matr1[3]*matr2[0]+matr1[4]*matr2[3];
+    int a22 = matr1[3]*matr2[1]+matr1[4]*matr2[4];
+    printf("%d %d\n%d %d",a11,a12,a21,a22);
+    return 0;
+}
