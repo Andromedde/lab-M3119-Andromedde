@@ -1,0 +1,55 @@
+//
+// Created by FerHard_GW on 26.11.2022.
+//
+
+#include "Proga_lab9.h"
+#include <stdio.h>
+
+int Mobil_oper(float time_use){
+
+    float cost = 400;
+    float time = 499;
+    float cost_time = time / cost;
+    int time_end = time_use - time;
+    float timecost_over = 1.58;
+    float price_end;
+    price_end = ((time_use - time) * timecost_over) + cost;
+    if (time_end > 0) {
+        printf("Cost: %.2f\n", price_end);
+    }
+    else {
+        printf("Cost: %.2f\n", cost);
+    }
+}
+
+int Bank() {
+    int month;
+    printf("How many month: ");
+    scanf("%d", &month);
+    float percent;
+    printf("Percentage:  ");
+    scanf("%f", &percent);
+    percent = (percent / 12) / 100;
+    float bank_plus;
+    printf("Deposit: ");
+    scanf("%f", &bank_plus);
+    for (int i = 0; i < month; i++) {
+        bank_plus += bank_plus * percent;
+        printf("%d month: %f\n", i + 1, bank_plus);
+    }
+    }
+
+
+
+int lab9(){
+    printf("==============02========\n");
+    int month, percent, bank_plus;
+    float time_use;
+    printf("Enter time: ");
+    scanf("%f", &time_use);
+    Mobil_oper(time_use);
+
+    printf("\n===========05=============\n\n");
+    printf("%f", Bank());
+    return 0;
+}
