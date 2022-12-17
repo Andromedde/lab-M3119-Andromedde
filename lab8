@@ -1,0 +1,83 @@
+//
+// Created by FerHard_GW on 25.11.2022.
+//
+
+#include "Proga_lab8.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+int lab8(){
+    char a[100], b[100];
+    printf("=============03=============\n");
+    printf("Enter the first string:\n");
+    gets(a);
+    int k;
+    printf("Enter the second string:\n");
+    gets(b);
+
+    for (int i = 0; i < strlen(a); i++) {
+        if (a[i] == b[i]) {
+            k++;
+        }
+    }
+    if(k== strlen(a))
+        printf("Entered strings are equal.\n");
+
+    else
+        printf("Entered strings are not equal.\n");
+
+    printf("=============06============\n\n");
+    int num,n;
+    printf("1.Copy from first to second line \n2.Copy from second to first line\n");
+    scanf("%d", &num);
+    printf("Enter number of characters:\n");
+    scanf("%d", &n);
+    switch (num) {
+        case 1:
+            printf("%s",a);
+            for(int l =0;l<n;l++){
+                printf("%c",b[l]);
+            }
+            break;
+
+        case 2:
+            printf("%s",b);
+            for(int l =0;l<n;l++){
+                printf("%c",a[l]);
+            }
+            break;
+        default:
+            printf("No such function\n");
+            break;
+
+    }
+    printf("\n==============07===========\n\n");
+    int len;
+    printf("Len first str: %d\n",strlen(a));
+    printf("Len second str: %d\n", strlen(b));
+
+
+    printf("================10============\n\n");
+    int m;
+    if(strlen(a)> strlen(b))
+        m= strlen(a);
+    else
+        m = strlen(b);
+    int arr[m];
+    printf("First: %s\nSecond: %s\n", a, b);
+    for ( int o = 0;o<m;o++){
+        for(int p =0;p<m;p++){
+            if(a[o]== b[p]){
+                printf("The same(index - element:\n%d - %c\n",o,b[o]);
+            } else
+                printf("No the same");
+        }
+    }
+
+//    printf("\n==============13============\n\n");
+
+
+    return 0;
+}
