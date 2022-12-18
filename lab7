@@ -7,11 +7,11 @@
 #include <math.h>
 union {
     struct {
-        unsigned int SD : 1;
-        unsigned int Compact_Flash : 1;
-        unsigned int  MemoyStick : 1;
+        char SD : 1;
+        char Compact_Flash : 1;
+        char  MemoyStick : 1;
     };
-    int bit;
+    char bit;
 } condition;
 enum Colour{
     akvarel,maslan,guash,vodnaya
