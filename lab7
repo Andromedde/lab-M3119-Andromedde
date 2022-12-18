@@ -16,8 +16,14 @@ union {
 enum Colour{
     akvarel,maslan,guash,vodnaya
 };
-float area(double *a,double *b,double *c,double *p){
-    double s = sqrt(*p*(*p-*a)*(*p-*b)*(*p-*c));
+struct Koord{
+    double a;
+    double b;
+    double c;
+    double p;
+};
+float area(struct Koord arg){
+    double s = sqrt(arg.p*(arg.p-arg.a)*(arg.p-arg.b)*(arg.p-arg.c));
     return s;
 }
 
@@ -52,13 +58,14 @@ int lab7(){
     scanf("%d %d",&x1,&y1);
     printf("Vvedite x2 y2: ");
     scanf("%d %d",&x2,&y2);
-    double a = sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
-    double b = sqrt((x2-x0)*(x2-x0) + (y2-y0)*(y2-y0));
-    double c = sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
-    double p = (a+b+c)/2;
-    printf("s= %.2f\n", area(&a,&b,&c,&p));
+    struct Koord arg;
+    arg.b = sqrt((x2-x0)*(x2-x0) + (y2-y0)*(y2-y0));
+    arg.c = sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    arg.a = sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+    arg.p = (arg.a+arg.b+arg.c)/2;
+    printf("s= %.2f\n", area(arg));
 
-    printf("Perimetr = %.2f\n ",p);
+    printf("Perimetr = %.2f\n ",arg.p);
 //    printf("Plohaf = %.2f\n",s);
 
     printf("-----------------------------------\n");
