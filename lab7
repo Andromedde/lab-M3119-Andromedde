@@ -7,17 +7,17 @@
 #include <math.h>
 union {
     struct {
-        char SD : 1;
-        char Compact_Flash : 1;
-        char  MemoyStick : 1;
+        unsigned int SD : 1;
+        unsigned int Compact_Flash : 1;
+        unsigned int  MemoyStick : 1;
     };
     int bit;
 } condition;
 enum Colour{
     akvarel,maslan,guash,vodnaya
 };
-float area(double a,double b,double c,double p){
-    double s = sqrt(p*(p-a)*(p-b)*(p-c));
+float area(double *a,double *b,double *c,double *p){
+    double s = sqrt(*p*(*p-*a)*(*p-*b)*(*p-*c));
     return s;
 }
 
@@ -56,7 +56,7 @@ int lab7(){
     double b = sqrt((x2-x0)*(x2-x0) + (y2-y0)*(y2-y0));
     double c = sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
     double p = (a+b+c)/2;
-    printf("s= %.2f\n", area(a,b,c,p));
+    printf("s= %.2f\n", area(&a,&b,&c,&p));
 
     printf("Perimetr = %.2f\n ",p);
 //    printf("Plohaf = %.2f\n",s);
